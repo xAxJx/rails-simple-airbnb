@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+ .top-banner {
+  background-color: antiquewhite;
+  height: 50px;
+  padding: 5px;
+  margin-bottom: 10px;
+ }
+
+ .main {
+  margin-inline: 50px;
+  margin-block: 20px;
+ }
+
+ .index-card {
+  display: block;
+  overflow: auto;
+  width: 400px;
+  background-color: antiquewhite;
+  border: solid 1px darkgray;
+  padding: 15px 15px 0px 15px;
+  margin-block: 20px;
+ }
+
+ .book {
+  width: 30%;
+  background-color: lightgray;
+  display: block;
+  padding: 10px;
+  margin-block: 10px;
+ }

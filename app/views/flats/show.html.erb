@@ -1,17 +1,27 @@
 <h1> <%= @flat.name %> </h1>
 
 <p> <%= @flat.address %> </p>
+
+<p>
+<%= image_tag @flat.image, size: "256x128", alt: "Flat Image" %>
+</p>
+
 <p> <%= @flat.description %> </p>
 
 <h2> Details </h2>
 <p> <%= @flat.number_of_guests %> guests max </p>
 <p> $<%= @flat.price_per_night %> / night </p>
 
-<p>
-<%= image_tag @flat.image, size: "128x128", alt: "Flat Image" %>
-</p>
+<div class="book">
+  <h3> Book this place! </h3>
+  <p> From: </p>
+  <p> To: </p>
+  <button> Book </button>
+</div>
 
-<%= link_to "Edit", edit_flat_path(@flat) %>
-<%= link_to "Delete", flat_path(@flat), data: { turbo_method: :delete} %>
+<p>
+<%= link_to "Edit", edit_flat_path(@flat) %>  -
+<%= link_to "Delete", flat_path(@flat), data: { turbo_method: :delete} %>  -
 
 <%= link_to "Back to main page", flats_path%>
+</p>

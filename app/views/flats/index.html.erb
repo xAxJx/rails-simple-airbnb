@@ -1,15 +1,14 @@
-<h1> Simple Flat Rentals </h1>
 
 <%= link_to "Add your flat", new_flat_path %>
 
 <p> Showing all <%= @flats.count %> flats. </p>
 
 <% @flats.each do |flat| %>
-<div> <strong> <%= flat.name %> </strong>
-<br>  <%= flat.address %>
-<br>  <%= flat.number_of_guests %> guests
-<br>  $<%= flat.price_per_night %>
-<br> <% if flat.image.present? %> <%= image_tag flat.image, size: "64x64", alt: "Flat Image" %> <%end%>
-<br> <%= link_to "More info", flat_path(flat) %> - <%= link_to "Edit", edit_flat_path(flat) %>- <%= link_to "Delete", flat_path(flat), data: { turbo_method: :delete} %>
+<div class="index-card"> <strong> <%= flat.name %> </strong>
+ <p> <%= flat.address %> </p>
+ <p> <% if flat.image.present? %> <%= image_tag flat.image, size: "128x96", alt: "Flat Image" %> <%end%> </p>
+ <p> <%= flat.number_of_guests %> guests -
+ $<%= flat.price_per_night %> </p>
+  <p> <%= link_to "More info", flat_path(flat) %> - <%= link_to "Edit", edit_flat_path(flat) %> - <%= link_to "Delete", flat_path(flat), data: { turbo_method: :delete} %> </p>
 </div>
 <% end %>
