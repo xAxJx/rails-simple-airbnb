@@ -40,6 +40,11 @@ class FlatsController < ApplicationController
     redirect_to flats_url, notice: "Flat was successfully deleted."
   end
 
+  def search
+    @searchterm = params[:search]
+    @flats = Flat.where("name LIKE '%#{@searchterm}%' ")
+  end
+
   private
 
   def flat_params

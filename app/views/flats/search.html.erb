@@ -1,12 +1,15 @@
-<%= form_with url: "flats/search", method: :get do |f| %>
-<%= f.label :search, "Search for a flat:" %>
-<%= f.search_field :search %>
-<%= f.submit "search" %>
-<% end %>
 
 <%= link_to "Add your flat", new_flat_path %>
 
+<h1> Search results for "<%=@searchterm%>"" </h1>
+
 <p> Showing all <%= @flats.count %> flats. </p>
+
+<%= form_with url: "search", method: :get do |f| %>
+<%= f.label :search, "Search again:" %>
+<%= f.search_field :search %>
+<%= f.submit "search" %>
+<% end %>
 
 <% @flats.each do |flat| %>
 <div class="index-card"> <strong> <%= flat.name %> </strong>
@@ -17,3 +20,5 @@
   <p> <%= link_to "More info", flat_path(flat) %> - <%= link_to "Edit", edit_flat_path(flat) %> - <%= link_to "Delete", flat_path(flat), data: { turbo_method: :delete} %> </p>
 </div>
 <% end %>
+
+<%= link_to "Back to main page", flats_path%>
